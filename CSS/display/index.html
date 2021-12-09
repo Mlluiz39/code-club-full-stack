@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .div-block {
+        background-color: red;
+        height: 120px;
+        width: 120px;
+        margin-top: 100px;
+        display: block;
+        /* aqui desbloqueia alteração de altura largura e comprimento */
+      }
+
+      .div-inline {
+        background-color: green;
+        height: 120px;
+        width: 120px;
+        margin-top: 100px;
+        display: inline;
+        /* aqui não troca o tamanho largura e comprimento */
+      }
+
+      .div-inline-block {
+        background-color: blue;
+        height: 120px;
+        width: 120px;
+        margin-top: 100px;
+        display: inline-block;
+        /* aqui troca o tamanho largura e comprimento porem com caracteristicas do inline*/
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Display</h1>
+
+    <div class="div-inline">Minha div com display inline</div>
+    <div class="div-inline">Minha div com display inline</div>
+    <div class="div-inline">Minha div com display inline</div>
+
+    <div class="div-block">Minha div com display block</div>
+    <div class="div-block">Minha div com display block</div>
+    <div class="div-block">Minha div com display block</div>
+
+    <div class="div-inline-block">Minha div com display inline block</div>
+    <div class="div-inline-block">Minha div com display inline block</div>
+    <div class="div-inline-block">Minha div com display inline block</div>
+   
+   
+  </body>
+</html>

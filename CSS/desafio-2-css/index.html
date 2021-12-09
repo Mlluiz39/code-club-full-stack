@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio 02</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <aside class="register">
+    <div class="div1">
+      <label class="label">Cadastro</label>
+    </div>
+    <main class="main">
+      <section>
+        <div>
+          <label>Nome</label>
+        </div>
+        <input type="text" name="name" placeholder="digite seu nome" />
+      </section>
+      <section>
+        <div>
+          <label>E-mail</label>
+        </div>
+        <input type="email" name="email" placeholder="digite seu email" />
+      </section>
+      <section>
+        <div>
+          <label>Idade</label>
+        </div>
+        <input type="number" name="age" min="12" style="width: 35px" />
+      </section>
+      <section>
+        <div>
+          <label>Data de Nascimento </label>
+        </div>
+        <input type="date" name="date" />
+      </section>
+      <section class="main-social-networks">
+        <div>
+          <label>Onde você possui conta: </label>
+        </div>
+        <input type="checkbox" name="instagram" id="Instagram" />
+        <span>Instagram</span>
+
+        <input type="checkbox" name="facebook" id="Facebook" />
+        <span>Facebook</span>
+
+        <input type="checkbox" name="Youtube" id="Youtube" />
+        <span>Youtube</span>
+      </section>
+      <section>
+        <label>Sexo</label>
+        <input type="radio" name="sex" id="Male" />
+        <span for="Male">Masculino</span>
+
+        <input type="radio" name="sex" id="Female" />
+        <span>Feminino</span>
+      </section>
+      <section>
+        <label>Cor dos olhos</label>
+        <input type="color" id="input-eye" value="#d2b48c" />
+      </section>
+      <section>
+        <div>
+          <label>Biografia</label>
+        </div>
+        <textarea name="Textarea" id="Textarea"></textarea>
+      </section>
+      <section>
+        <div>
+          <label>Foto de perfil</label>
+        </div>
+        <input type="file" name="picture" id="file" accept="image/*" />
+      </section>
+      <section>
+        <div>
+          <label>Telefone</label>
+        </div>
+        <input type="tel" name="phone" id="phone" placeholder="(00) 0 0000-0000" />
+      </section>
+      <section class="section-social-networks">
+        <label>Redes Sociais Link</label>
+        <select name="select" id="select">
+          <option value="1">Select</option>
+          <option value="instagram">Instagram</option>
+          <option value="facebook">Facebook</option>
+          <option value="youtube">Youtube</option>
+        </select>
+        <div id="input-social-networks">
+          <input type="url" name="social-networks" id="social-networks" placeholder="https://" />
+        </div>
+      </section>
+      <section>
+        <div>
+          <label>Senha</label>
+        </div>
+        <input type="password" name="password" id="password" minlength="6" maxlength="8" placeholder="Digite sua senha" />
+      </section>
+      <section>
+        <button type="reset" name="btn-reset" class="btn btn-reset">Limpar</button>
+        <button type="submit" name="btn-submit" class="btn btn-submit">Enviar Dados</button>
+      </section>
+  </aside>
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+}
+
+.container {
+  width: 375px;
+  height: 812px;
+  background-color: #fff;
+}
+
+.login {
+  font-style: normal;
+  margin: 128px auto auto 16px;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 41px;
+  letter-spacing: 0.41px;
+  color: #000000;
+}
+
+.paragraph {
+  width: 90%;
+  margin: 12px auto 0 auto;
+}
+
+.paragraph p {
+  display: block;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: 0.41px;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 102px;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+  background: #f2f2f7;
+  border: none;
+  border-radius: 6px;
+  width: 343px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: -0.41px;
+  color: #929292;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.link a {
+  display: block;
+  font-size: 16px;
+  margin-top: 17px;
+  margin-right: 16px;
+  line-height: 22px;
+  text-align: right;
+  letter-spacing: -0.41px;
+  color: #007aff;
+  text-decoration: none;
+}
+
+.btn-login {
+  display: block;
+  width: 343px;
+  height: 48px;
+  margin: 20px auto 204px auto;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 25%), 0px 4px 4px rgb(0 0 0 / 25%);
+  letter-spacing: -0.41px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.94);
+  color: #fff;
+}
+
+.paragraph-signup {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.51);
+  text-align: center;
+  margin-bottom: 39px;
+}
+
+.paragraph-signup strong {
+  color: #18a0fb;
+  font-weight: 500;
+}
+
+@media (min-width: 760px) {
+  body {
+    background-color: #e5e5e5;
+  }
+  .container {
+    width: 25.875rem;
+    height: 54.125rem;
+    background-color: #ffffff;
+    margin: 0.625rem auto;
+    border: 0.063rem solid transparent;
+    box-shadow: -0.25rem 0.25rem 1.125rem rgb(0 0 0 / 9%);
+  }
+}

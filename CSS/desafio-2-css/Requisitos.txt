@@ -1,0 +1,12 @@
+[] Retirar todas as tag's <br> e manter o layout sem alterações visuais
+[] Tirar o fieldset e manter o layout sem alterações visuais
+
+- Ao passar o mouse sobre os botões de limpar e enviar dados:
+  [] O cursor terá que ser o da mãozinha
+  [] Trocar a cor de fundo
+  [] Aumentar o botão
+  [] Trocar a cor da letra
+  [] Trocar a cor da borda
+
+  [] Alterar cores da borda de todos os inputs
+  [] Alterar a fonte do projeto para 'Nunito'

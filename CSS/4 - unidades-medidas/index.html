@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidades de medidas</title>
+
+    <style>
+      h1 {
+        text-align: center;
+        font-size: 1cm;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 0.7in;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 48px;
+      }
+      #div-pai {
+        font-size: 32px;
+      }
+
+      #div-filha {
+        font-size: 0.5em;
+      }
+
+      p {
+        text-align: justify;
+        font-size: 1rem; /*aqui ele pega a medida padrao do elemento root p body que é de 16px */
+      }
+
+      #pai {
+        font-size: 32px;
+        background-color: brown;
+        width: 500px;
+        height: 500px;
+      }
+
+      #filha {
+        font-size: 2em;
+        background-color: blueviolet;
+        width: 50%;
+        height: 50%;
+        /* aqui pega a porcentagem do pai */
+      }
+
+      #pai-vh-vw {
+        font-size: 32px;
+        background-color: #2ea52a;
+        width: 30vw;
+        height: 30vh;
+      }
+
+      #filha-vh-vw {
+        font-size: 2em;
+        background-color: #5c3d3b;
+        width: 50%;
+        height: 50%;
+        /* aqui pega a porcentagem do pai */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Medidas Absolutas em CM</h1>
+    <!-- Medida em cm -->
+    <h2>Medidas Absolutas em POL</h2>
+    <!-- Medida em polegadas -->
+    <h3>Medidas Absolutas PX</h3>
+    <!-- Medida em pixel -->
+
+    <div id="div-pai">
+      <!-- aqui usa medida relativa em que pega o valor relativo ao pai-->
+      div pai
+
+      <div id="div-filha">div filha</div>
+    </div>
+
+    <p>Ola Paragrafo referente ao pai</p>
+
+    <div id="pai">
+      PAI
+      <div id="filha">FILHA</div>
+    </div>
+    <br />
+    <hr />
+    <br />
+    <div id="pai-vh-vw">
+      <div id="filha-vh-vw"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position</title>
+</head>
+
+<!-- 
+    Position
+    Static: Não aceita valores de top, bottom, right, left
+    Fixed: Fixa o elemento na tela
+    Sticky: Age como um adesivo, fixa o elemento onde ele foi determinado
+    Realtive: Posição relativa a outro elemento ou a pagina
+    Absolute: posição absoluta(fixa) a algum elemento ou a pagina
+
+    Propriedades:
+    - top
+    - bottom
+    - left
+    - right
+  -->
+  
+<body>
+  <div class="div-dad">
+    pai 0
+    <div class="div-son">
+      filho 0
+    </div>
+  </div>
+  <div class="mother">
+    mae 0
+  </div>
+
+  <div class="div-dad-1">
+    pai 0
+    <div class="div-son-1">
+      filho 1
+    </div>
+  </div>
+
+  <div class="div-dad-2">pai 2</div>
+  <div class="div-son-2">filho 2</div>
+
+  <div class="div-dad-3">
+    pai 3
+    <div class="div-son-3">
+      filho 3
+    </div>
+  </div>
+ 
+  
+</body>
+
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 200vh;
+  }
+
+  .div-dad {
+    height: 350px;
+    width: 350px;
+    background-color: blue;
+    position: static;
+  }
+
+  .div-son {
+    height: 150px;
+    width: 150px;
+    background-color: goldenrod;
+    position: fixed;
+    left: 90px;
+    top: 10px;  
+  }
+  
+  .mother {
+    height: 250px;
+    width: 250px;
+    background-color: red;
+    position: sticky;
+     margin-top: 460px;  /* aqui fixou antes de chegar no son */
+    top: 0;  
+  }
+
+  .div-dad-1 {
+    height: 350px;
+    width: 350px;
+    background-color: green;
+    position: relative;
+    top: 50px;
+    left: 100px;
+    
+  }
+
+  .div-son-1 {
+    height: 150px;
+    width: 150px;
+    background-color: turquoise;
+    position: relative;
+    top: -15px;
+    left: -15px;   
+  }
+
+  .div-dad-2 {
+    height: 350px;
+    width: 350px;
+    background-color: tomato;
+    position: absolute;
+    opacity: 0.5;
+    
+  }
+
+  .div-son-2 {
+    height: 150px;
+    width: 150px;
+    background-color: orange;
+      
+  }
+
+  .div-dad-3 {
+    height: 350px;
+    width: 350px;
+    background-color: slategrey;
+    margin-top: 200px;
+    padding-top: 10px;  
+  }
+
+  .div-son-3 {
+    height: 150px;
+    width: 150px;
+    background-color: limegreen;
+    margin-top: 20px;
+    position: absolute;
+    left: 370px; /* aqui como ele ta dentro do pai e com o absolute ta respeitando o root */
+   
+      
+  }
+
+
+</style>
+</html>

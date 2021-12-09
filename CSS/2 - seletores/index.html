@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seletores</title>
+  <style>
+    h1 {
+      color: #699;
+    }
+
+    /* por tag */
+    p {
+      margin-top: 30px;
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    /* Por id */
+    #paragraph {
+      color: #00f;
+    }
+
+    /* Por classe */
+    .link {
+      color: #ff0037;
+    }
+
+    /* Por atributo */
+    a[href="https://f1.com"] {
+      color: #ea00ff;
+    }
+
+    /* Agrupando por seletores */
+    #paragraph, h1, p, .link, a[href="https://f1.com"] {
+      color: yellowgreen;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Bora utilizar seletores CSS</h1>
+  <h2>Seletores hello paragraph</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aliquam voluptate expedita, exercitationem dolorem magni, iure quia eligendi dolore unde nihil voluptatum a eum! Dolore maiores molestias ipsum ratione repellat.</p>helo word
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aliquam voluptate expedita, exercitationem dolorem magni, iure quia eligendi dolore unde nihil voluptatum a eum! Dolore maiores molestias ipsum ratione repellat.</p>
+  <p id="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, aliquam voluptate expedita, exercitationem dolorem magni, iure quia eligendi dolore unde nihil voluptatum a eum! Dolore maiores molestias ipsum ratione repellat.</p>
+  <a class="link" href="https://f1.com">Formula 1</a> 
+  <br><br>
+  <a class="link" href="https://google.com.br">Google</a>
+
+</body>
+
+</html>

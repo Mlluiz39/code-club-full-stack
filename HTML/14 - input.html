@@ -1,0 +1,67 @@
+<!-- INPUT -->
+
+<form action="" method="get"/>
+  <input type="text"/>
+  <br>
+  <input placeholder="placeholder"/>
+  <br>
+  <input autocomplete="email" placeholder="email"/>
+  <br>
+  <input autofocus placeholder="autofocus"/>
+  <br>
+  <input disabled placeholder="disabled"/>
+  <br>
+  <input readonly placeholder="readonly"/>
+  <br>
+  <input value="value"/>
+  <br>
+  <label>
+    Clique aqui:
+    <input type="text" id="User" name="Name"/>
+  </label>
+  <br>
+  <label for="User">Clique aqui:</label>  <!-- for -> define o id do input -->
+  <input type="text" id="User" name="Name"/>
+</form>
+
+<form action="" method="get"/>
+  <input 
+    type="password" 
+    minlength="5" 
+    maxlength="10" 
+    inputmode="numeric" 
+    placeholder="password"
+    />  <!-- inputmode -> define o modo de digitação do input em celulares abre o teclado numérico -->
+  <input type="submit" value="enviar"/>
+  <br>
+  <input type="number" placeholder="numero">
+  <br>
+  <input type="email" placeholder="email">
+  <br><br>
+  <input type="checkbox">
+  <br>
+  <input type="radio">
+  <br>
+  <input type="url" placeholder="apenas url">
+  <br>
+  <input type="color" value="#00BFFF">
+  <br>
+  <input type="range" min="2" max="10" value="3" step="2">
+  </form>
+  <!-- INPUT FILE
+    Value -> define o valor do input
+    accept -> define o tipo de arquivo aceito
+    multiple -> define se o input aceita mais de um arquivo
+  -->
+  <form action="" method="post" enctype="multipart/form-data">  <!-- toda vez que for um type file 
+    tem que usar as propriedade multipart/form-data e o method tem que ser POST -->
+  <input type="file" accept="video/mp4">  <!-- aqui pega só os videos mp4 -->
+  <br>
+  <input type="file" accept="video/*">  <!-- aqui pega todos os videos -->
+  <br>
+  <input type="file" accept="image/jpg">  <!-- aqui só um formato -->
+  <br>
+  <input type="file" accept="image/*">  <!-- aqui pega todos os formatos -->
+  <br>
+  <input type="file" accept="image/*" multiple>  <!-- aqui pega todos os formatos e aceita mais de um arquivo -->
+</form>

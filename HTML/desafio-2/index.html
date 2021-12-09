@@ -1,0 +1,126 @@
+<!--
+  REQUISITOS DO DESAFIO:
+
+  [] Você deve reproduzir o mais parecido possível a tela mostrada na aula
+  [] Não pode usar CSS e JavaScript
+  [] Todos os inputs devem conter o parâmetro "name" devidamente preenchido e condizente com o campo
+  [] No campo email, deve ser permitido apenas emails validos
+  [] Os inputs do tipo radio só devem permitir a escolha de um sexo
+  [] O input de idade não deve permitir submeter idade inferior a 12 anos
+  [] No campo de upload de foto são apenas permitidos arquivos do tipo foto
+  [] No campo perfil do facebook deve ser permitido apenas URL's válidas
+  [] No campo senha devem ser permitidos senhas entre 6 e 8 caracteres
+  [] O botão limpar deve deixar todos os campos em branco
+  [] O botão Enviar deve submeter os dados
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio 02</title>
+  </head>
+  <body>
+    <form action="#" method="get">
+      <fieldset>
+        <legend>Cadastro</legend>
+        <label
+          >Nome<br />
+          <input type="text" name="name" placeholder="digite seu nome" />
+        </label>
+        <br /><br />
+        <label
+          >Email<br />
+          <input type="email" name="email" placeholder="digite seu email" />
+        </label>
+        <br /><br />
+        <label
+          >Idade<br />
+          <input type="number" name="age" min="12" style="width: 35px" />
+        </label>
+        <br /><br />
+        <label
+          >Data de Nascimento<br />
+          <input type="date" name="date" />
+        </label>
+        <br /><br />
+        <div>
+          <p>
+            Onde você possui conta:<br />
+            <input type="checkbox" name="instagram" id="Instagram" />
+            <label for="Instagram">Instagram</label>
+
+            <input type="checkbox" name="facebook" id="Facebook" />
+            <label for="facebook">Facebook</label>
+
+            <input type="checkbox" name="Youtube" id="Youtube" />
+            <label for="Youtube">Youtube</label>
+          </p>
+        </div>
+        <p>
+          Sexo <br />
+
+          <input type="radio" name="sex" id="Male" />
+          <label for="Male">Masculino</label>
+
+          <input type="radio" name="sex" id="Female" />
+          <label for="Female">Feminino</label>
+        </p>
+        <label>
+          Cor dos olhos
+          <input type="color" value="#d2b48c" />
+        </label>
+        <br /><br />
+        <label for="Textarea">Biografia</label>
+        <br />
+        <textarea name="Textarea" id="Textarea"></textarea>
+        <br /><br />
+        <span
+          >Foto de perfil<br />
+          <input type="file" name="picture" accept="image/*" />
+        </span>
+        <p>
+          Telefone <br />
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="(00) 0 0000-0000"
+          />
+        </p>
+        <div>
+          <span>Redes Sociais link'</span>
+          <select name="select">
+            <option value="1">Select</option>
+            <option value="instagram">Instagram</option>
+            <option value="facebook">Facebook</option>
+            <option value="youtube">Youtube</option></select
+          ><br />
+          <input
+            type="url"
+            name="facebook"
+            id="facebook"
+            placeholder="https://"
+          />
+        </div>
+        <br />
+        <label>
+          Senha <br />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            minlength="6"
+            maxlength="8"
+            placeholder="Digite sua senha"
+          />
+        </label>
+        <br /><br />
+        <button type="reset" name="button-reset" id="btn-reset">Limpar</button>
+        <button type="submit" name="button-submit" id="btn-submit">Enviar Dados</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
