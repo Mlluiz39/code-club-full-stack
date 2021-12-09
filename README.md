@@ -22,7 +22,7 @@ O curso ainda está em desenvolvimento e as próximas atualizações serão volt
 ## 💻 Pré-requisitos
 
 Antes de começar, temos que saber que não tem nenhum pré requisitos de programação:
-* Somente força de vontade de apreender.
+* Somente força de vontade de aprender.
 * Paciência para saber que leva um tempo para absorver o conteúdo.
 * Resiliência
 
