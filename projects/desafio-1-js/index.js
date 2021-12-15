@@ -43,8 +43,8 @@ let sameName1 = 'João'
 let sameName2 = 'João'
 let sameName3 = 'Maria'
 
-let sameNamesValue1 = sameName1 == sameName2
-let sameNamesValue2 = sameName2 == sameName3
+let sameNamesValue1 = sameName1 === sameName2
+let sameNamesValue2 = sameName2 === sameName3
 
 console.log(
   `O nome ${sameName1} e o nome ${sameName2} em comparação são  \x1b[32m${sameNamesValue1}\x1b[0m`
@@ -56,8 +56,8 @@ console.log(
 console.log('========================================================')
 
 // [ ] Faça um programa que imprima na tela se um nome é diferente ao outro nome digitado. Ex: João e João, imprime false. João e Maria, imprime true.
-sameNamesValue1 = sameName1 != sameName2
-sameNamesValue2 = sameName2 != sameName3
+sameNamesValue1 = sameName1 !== sameName2
+sameNamesValue2 = sameName2 !== sameName3
 
 console.log(
   `O nome ${sameName1} e o nome ${sameName2} em diferenciação são \x1b[31m${sameNamesValue1}\x1b[0m`
@@ -73,12 +73,12 @@ const namesArray = ['João', 'Maria']
 
 console.log(
   `O nome na posição "0" é igual ao nome na posição "0" =>  \x1b[32m${
-    namesArray[0] == namesArray[0]
+    namesArray[0] === namesArray[0]
   }\x1b[0m`
 )
 console.log(
   `O nome na posição "0" é igual ao nome na posição "1" =>  \x1b[31m${
-    namesArray[0] == namesArray[1]
+    namesArray[0] === namesArray[1]
   }\x1b[0m`
 )
 
@@ -89,12 +89,12 @@ const namesArray1 = ['João', 'Maria']
 
 console.log(
   `O nome na posição "0" é igual ao nome na posição "0" => \x1b[31m${
-    namesArray1[0] != namesArray1[0]
+    namesArray1[0] !== namesArray1[0]
   }\x1b[0m`
 )
 console.log(
   `O nome na posição "0" é igual ao nome na posição "1" => \x1b[32m${
-    namesArray1[0] != namesArray1[1]
+    namesArray1[0] !== namesArray1[1]
   }\x1b[0m`
 )
 
