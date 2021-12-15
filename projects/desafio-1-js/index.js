@@ -11,7 +11,7 @@ console.log('========================================================')
 const numberValue1 = 8
 const numberValue2 = 6
 const numberValue3 = 10
-const multiplyTwoNumbersPlusTen = numberValue2 * numberValue3 + numberValue1
+const multiplyTwoNumbersPlusTen = (numberValue1 * numberValue2) + numberValue3
 
 console.log(`O resultado do 2° exercicio é => ${multiplyTwoNumbersPlusTen}`)
 
