@@ -20,4 +20,4 @@ false || false -> false
 !false -> true
 */
 
-log(!true)
+log(!(!(true && true && true) && !(false && true || true)))
