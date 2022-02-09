@@ -29,15 +29,23 @@ Ao rodar o programa, deve imprimir se a pessoa é aprovada ou não no processo ,
 
 const log = msg => console.log(msg)
 
-const myNumber = 10
-let valueClient = 5
-if (valueClient > myNumber) {
-  log('O número é maior')
-} else if (valueClient < myNumber) {
-  log('O número é menor')
-} else {
-  log('O número é igual')
-}
+const readline = require('readline').createInterface({
+  input: process.stdin,
+  output: process.stdout,
+})
+
+readline.question('Digite um número: ', num => {
+  const myNumber = 5
+  let valueClient = Number(num)
+  if (valueClient > myNumber) {
+    log('O número é maior')
+  } else if (valueClient < myNumber) {
+    log('O número é menor')
+  } else {
+    log('O número é igual')
+  }
+  readline.close()
+})
 
 const client = {
   name: 'José',
@@ -48,21 +56,24 @@ const client = {
 log(client.nationality === 'brasileiro')
 log(client['nationality'] === 'argentino')
 
-const myLuckyNumber = 5
+readline.question('Digite um número da sorte: ', number => {
+const myLuckyNumber = Number(number)
 const numberRandom = Math.floor(Math.random() * 10 + 1)
-numberRandom == myLuckyNumber
+numberRandom === myLuckyNumber
   ? log('esse número é o número ganhador parabéns!')
   : log('esse não é o numero sorteado tente novamente!')
+  readline.close()
+})
 
 const myNumber1 = 17
 const myNumber2 = 26
 const myNumber3 = 19
 if (myNumber1 > myNumber2 && myNumber1 > myNumber3) {
-  log('O número 1 é o maior')
+  log('O 1 numero é o maior')
 } else if (myNumber2 > myNumber1 && myNumber2 > myNumber3) {
-  log('O número 2 é o maior')
+  log('O 2 número é o maior')
 } else {
-  log('O número 3 é o maior')
+  log('O 3 número é o maior')
 }
 
 const customer = [
@@ -150,15 +161,20 @@ evenOrOddNumber % 2 === 0
   ? log('esse número é par')
   : log('esse número é impar')
 
-const primeAndImparNumber = 7
+const primeAndImparNumber = 27
 if (primeAndImparNumber % 2 === 0) {
-  log('esse número é par')
-} else if (primeAndImparNumber % 5 === 0) {
-  log('esse número é divisível por 5')
-} else if (primeAndImparNumber % 3 === 0) {
-  log('esse número é impar')
-} else if (primeAndImparNumber % 7 === 0) {
-  log('esse número é primo')
+  if (primeAndImparNumber % 5 === 0) log('esse número é par e divisível por 5')
+  else log('esse número é par e não é divisível por 5')
+} else {
+  for (let i = 2; i < primeAndImparNumber; i++)
+    if (primeAndImparNumber % i === 0) {
+      log('esse número é impar mas não é primo')
+      break
+    } else {
+      if (i === primeAndImparNumber - 1) {
+        log('esse número é primo')
+      }
+    }
 }
 
 const oddAndEvenNumbers = [2, 47, 6, 29]
