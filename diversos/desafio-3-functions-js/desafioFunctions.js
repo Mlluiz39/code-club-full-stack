@@ -86,9 +86,7 @@ function exactTime() {
 
 exactTime()
 
-log(
-  '----------------------------- Ano Exato ----------------------------------'
-)
+log('----------------------------- Ano Exato ---------------------------------')
 
 function exactYear() {
   const date = new Date()
