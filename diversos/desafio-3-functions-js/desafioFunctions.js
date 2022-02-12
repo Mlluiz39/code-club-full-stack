@@ -51,10 +51,64 @@ Cálculo taxa = juros(Valor atual do investimento - Valor inicial investido) / V
     - Se o cliente não recebeu desconto, imprima na tela um agradecimento pela compra, o valor total da sua compra e um cupom de desconto. Esse cupom deve ser um valor aleatório entre 10 e 20% para a próxima compra.
     */
 
+const log = msg => console.log(msg)
+
+log('------------------------ números de 1 ao selecionado --------------------')
+
 function numbersFromASelected(number) {
-  for (let i = 1; i < number; i++) {
-    console.log(i)
+  for (let i = 1; i <= number; i++) {
+    log(i)
   }
 }
 
 numbersFromASelected(16)
+
+log('----------------------------- Tabuada -----------------------------------')
+
+const multiplicationTable = number => {
+  for (let i = 1; i <= 10; i++) {
+    log(`${number} x ${i} = ${number * i}`)
+  }
+}
+
+multiplicationTable(6)
+
+log('----------------------------- Hora Exata --------------------------------')
+
+function exactTime() {
+  const date = new Date()
+  const hour = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
+
+  log(`${hour}:${minutes}:${seconds}`)
+}
+
+exactTime()
+
+log(
+  '----------------------------- Ano Exato ----------------------------------'
+)
+
+function exactYear() {
+  const date = new Date()
+  const year = date.getFullYear()
+
+  log(`${year}`)
+}
+
+exactYear()
+
+log('----------------------------- Maior Número ------------------------------')
+
+function greaterNumber(num1, num2) {
+   num1 > num2
+    ? log(`${num1} é maior que ${num2}`)
+    : log(`${num2} é maior que ${num1}`)
+}
+
+greaterNumber(34, 6)
+
+log('-------------- media de salario e filhos da população--------------------')
+
+const population = []
