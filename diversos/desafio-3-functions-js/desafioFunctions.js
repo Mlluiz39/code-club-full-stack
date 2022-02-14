@@ -100,7 +100,7 @@ exactYear()
 log('----------------------------- Maior Número ------------------------------')
 
 function greaterNumber(num1, num2) {
-   num1 > num2
+  num1 > num2
     ? log(`${num1} é maior que ${num2}`)
     : log(`${num2} é maior que ${num1}`)
 }
@@ -109,4 +109,98 @@ greaterNumber(34, 6)
 
 log('-------------- media de salario e filhos da população--------------------')
 
-const population = []
+const population = [
+  { name: 'Marilene', salary: 2200, children: 4 },
+  { name: 'Luiz', salary: 4300, children: 5 },
+  { name: 'Marcelo', salary: 2000, children: 1 },
+  { name: 'Elaine', salary: 2300, children: 2 },
+  { name: 'Alex', salary: 1500, children: 3 },
+]
+
+const averageSalaryAndChildren = population => {
+  let totalSalary = 0
+  let totalChildren = 0
+
+  for (let i = 0; i < population.length; i++) {
+    totalSalary += population[i].salary
+    totalChildren += population[i].children
+  }
+
+  log(`Média de salário: ${totalSalary / population.length}`)
+  log(`Média de filhos: ${totalChildren / population.length}`)
+}
+
+averageSalaryAndChildren(population)
+
+log('----------------------------- Taxa mensal de juros ----------------------')
+
+const interests = (currentValue, initialCurrent, time) => {
+  const taxa = ((currentValue - initialCurrent) / initialCurrent) * time
+  log(`Taxa de juros: ${taxa.toFixed(1)}%`)
+}
+
+interests(2030, 1300, 6)
+
+log('----------------------------- Gerador de descontos ----------------------')
+
+/*
+Como rodar programa 
+digite seu nome:
+digite o valor da compra:
+digite se é a primeira compra do cliente: com S para SIM ou N para NÃO:
+digite se o cliente vai pagar a vista ou parcelado: com SIM ou NÃO:
+*/
+
+const discount = (name, value, firstPurchase, payCash) => {
+  let purchaseValidation = firstPurchase === 'S' ? true : false
+  let payCashValidation = payCash === 'S' ? true : false
+
+  if (value >= 1000 && purchaseValidation && payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 30%`)
+  } else if (
+    value <= 1000 &&
+    value >= 500 &&
+    purchaseValidation &&
+    payCashValidation
+  ) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 25%`)
+  } else if (value <= 500 && purchaseValidation && payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 20%`)
+  } else if (value >= 1000 && purchaseValidation && !payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 20%`)
+  } else if (
+    value <= 1000 &&
+    value >= 500 &&
+    purchaseValidation &&
+    !payCashValidation
+  ) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 15%`)
+  } else if (value <= 500 && purchaseValidation && !payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 10%`)
+  } else if (value >= 1000 && !purchaseValidation && payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 20%`)
+  } else if (
+    value <= 1000 &&
+    value >= 500 &&
+    !purchaseValidation &&
+    payCashValidation
+  ) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 15%`)
+  } else if (value <= 500 && !purchaseValidation && payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 10%`)
+  } else if (value >= 1000 && !purchaseValidation && !payCashValidation) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 10%`)
+  } else if (
+    value <= 1000 &&
+    value >= 500 &&
+    !purchaseValidation &&
+    !payCashValidation
+  ) {
+    log(`${name}, obrigado pela compra! Você ganhou um desconto de 5%`)
+  } else if (value <= 500 && !purchaseValidation && !payCashValidation) {
+    log(`${name} Você não teve desconto, mas obrigado pela compra`)
+  }
+  return purchaseValidation, payCashValidation
+}
+
+discount('Marcelo', 300, 'N', 'N')
