@@ -144,63 +144,48 @@ interests(2030, 1300, 6)
 log('----------------------------- Gerador de descontos ----------------------')
 
 /*
-Como rodar programa 
+Como rodar o programa 
 digite seu nome:
 digite o valor da compra:
 digite se é a primeira compra do cliente: com S para SIM ou N para NÃO:
-digite se o cliente vai pagar a vista ou parcelado: com SIM ou NÃO:
+digite se o cliente vai pagar a vista ou parcelado: com S para SIM ou N para NÃO:
 */
 
 const discount = (name, value, firstPurchase, payCash) => {
-  let purchaseValidation = firstPurchase === 'S' ? true : false
-  let payCashValidation = payCash === 'S' ? true : false
+  let first = firstPurchase
+  let pay = payCash
+  if (first === 'S' || first === 's') first = true
+  else first = false
 
-  if (value >= 1000 && purchaseValidation && payCashValidation) {
+  if (pay === 'S' || pay === 's') pay = true
+  else pay = false
+
+  if (value >= 1000 && first && pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 30%`)
-  } else if (
-    value <= 1000 &&
-    value >= 500 &&
-    purchaseValidation &&
-    payCashValidation
-  ) {
+  } else if (value <= 1000 && value >= 500 && first && pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 25%`)
-  } else if (value <= 500 && purchaseValidation && payCashValidation) {
+  } else if (value <= 500 && first && pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 20%`)
-  } else if (value >= 1000 && purchaseValidation && !payCashValidation) {
+  } else if (value >= 1000 && first && !pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 20%`)
-  } else if (
-    value <= 1000 &&
-    value >= 500 &&
-    purchaseValidation &&
-    !payCashValidation
-  ) {
+  } else if (value <= 1000 && value >= 500 && first && !pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 15%`)
-  } else if (value <= 500 && purchaseValidation && !payCashValidation) {
+  } else if (value <= 500 && first && !pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 10%`)
-  } else if (value >= 1000 && !purchaseValidation && payCashValidation) {
+  } else if (value >= 1000 && !first && pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 20%`)
-  } else if (
-    value <= 1000 &&
-    value >= 500 &&
-    !purchaseValidation &&
-    payCashValidation
-  ) {
+  } else if (value <= 1000 && value >= 500 && !first && pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 15%`)
-  } else if (value <= 500 && !purchaseValidation && payCashValidation) {
+  } else if (value <= 500 && !first && pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 10%`)
-  } else if (value >= 1000 && !purchaseValidation && !payCashValidation) {
+  } else if (value >= 1000 && !first && !pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 10%`)
-  } else if (
-    value <= 1000 &&
-    value >= 500 &&
-    !purchaseValidation &&
-    !payCashValidation
-  ) {
+  } else if (value <= 1000 && value >= 500 && !first && !pay) {
     log(`${name}, obrigado pela compra! Você ganhou um desconto de 5%`)
-  } else if (value <= 500 && !purchaseValidation && !payCashValidation) {
+  } else if (value <= 500 && !first && !pay) {
     log(`${name} Você não teve desconto, mas obrigado pela compra`)
   }
-  return purchaseValidation, payCashValidation
+  return first, pay
 }
 
-discount('Marcelo', 300, 'N', 'N')
+discount('Marcelo', 1100, 'S', 's')
