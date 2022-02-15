@@ -31,7 +31,9 @@ Cálculo taxa = juros(Valor atual do investimento - Valor inicial investido) / V
 
     - Se é a primeira compra do cliente, pagar a vista e a compra for menor que R$ 500 => desconto de 20% 
 
-    - Se é a primeira compra do cliente, NÃO pagar a vista, e a compra for maior que R$ 1000 => 20% de desconto - Se é a primeira compra do cliente, NÃO pagar a vista, e a compra for menor que R$ 1000, e maior que R$ 500 => 15% de desconto 
+    - Se é a primeira compra do cliente, NÃO pagar a vista, e a compra for maior que R$ 1000 => 20% de desconto 
+    
+    - Se é a primeira compra do cliente, NÃO pagar a vista, e a compra for menor que R$ 1000, e maior que R$ 500 => 15% de desconto 
 
     - Se é a primeira compra do cliente, NÃO pagar a vista e a compra for menor que R$ 500 => desconto de 10% 
 
@@ -41,7 +43,9 @@ Cálculo taxa = juros(Valor atual do investimento - Valor inicial investido) / V
 
    - Se NÃO é a primeira compra do cliente, pagar a vista e a compra for menor que R$ 500 => desconto de 10% 
 
-   - Se NÃO é a primeira compra do cliente, NÃO pagar a vista, e a compra for maior que R$ 1000 => 10% de desconto - Se NÃO é a primeira compra do cliente, NÃO pagar a vista, e a compra for menor que R$ 1000, e maior que R$ 500 => 5% de desconto 
+   - Se NÃO é a primeira compra do cliente, NÃO pagar a vista, e a compra for maior que R$ 1000 => 10% de desconto 
+   
+   - Se NÃO é a primeira compra do cliente, NÃO pagar a vista, e a compra for menor que R$ 1000, e maior que R$ 500 => 5% de desconto 
 
    - Se NÃO é a primeira compra do cliente, NÃO pagar a vista e a compra for menor que R$ 500 => SEM DESCONTO
 - A função deve imprimir na tela: 
@@ -55,23 +59,28 @@ const log = msg => console.log(msg)
 
 log('------------------------ números de 1 ao selecionado --------------------')
 
-function numbersFromASelected(number) {
-  for (let i = 1; i <= number; i++) {
-    log(i)
+function numbersFromASelected(numberToSelected) {
+  for (let i = 1; i <= numberToSelected; i++) {
+    log(`Contando... ${i}`)
   }
 }
 
-numbersFromASelected(16)
+numbersFromASelected(5)
 
 log('----------------------------- Tabuada -----------------------------------')
 
 const multiplicationTable = number => {
-  for (let i = 1; i <= 10; i++) {
-    log(`${number} x ${i} = ${number * i}`)
+  if (number > 10 || number < 1) {
+    log('Aceitamos somente números entre 1 e 10')
+    return
+  }
+
+  for (let index = 1; index <= 10; index++) {
+    log(`${number} x ${index} = ${number * index}`)
   }
 }
 
-multiplicationTable(6)
+multiplicationTable(2)
 
 log('----------------------------- Hora Exata --------------------------------')
 
