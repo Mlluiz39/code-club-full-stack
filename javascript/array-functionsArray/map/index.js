@@ -32,6 +32,17 @@ const newArray1 = numbers.map(number => {
 })
 
 log({ numbers, newArray1 })
+/* 
+const newStudents0 = students.map(student => ({name: student.name + ' Pereira', age: student.age + 1}))
+envolvendo entre parênteses temos retorno implícito ou seja podemos retornar em 
+uma única linha sem a palavra return
+*/
+const newStudents0 = students.map(student => ({
+  name: student.name + ' Pereira',
+  age: student.age + 1,
+}))
+
+log(newStudents0)
 
 const newStudents = students.map(student => {
   const { name, age } = student
