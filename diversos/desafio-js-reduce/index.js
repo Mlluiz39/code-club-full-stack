@@ -50,5 +50,5 @@ log(marketValueOfCompanies2)
 /*
 No exemplo acima para que não ultrapasse a quantidade de 80 caracteres, o que 
 dificultaria a leitura do código, foi feita a quebra da expressão em duas linhas
- e uma vez não foi necessário envolver toda a expressão entre parenteses.
+ e mais uma vez não foi necessário envolver toda a expressão entre parenteses.
 */
