@@ -44,6 +44,13 @@ const newStudents0 = students.map(student => ({
 
 log(newStudents0)
 
+const idInObj = students.map(function (obj) {
+  obj.id = Math.floor(Date.now() * Math.random()).toString(16)
+  return obj
+})
+
+log(idInObj)
+
 const newStudents = students.map(student => {
   const { name, age } = student
   return { name: `${name} de Souza`, age: age + 1 }
