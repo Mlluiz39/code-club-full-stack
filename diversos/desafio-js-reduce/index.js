@@ -13,7 +13,8 @@ const companies = [
   { name: "Apple", marketValue: 845, CEO: 'Steve Jobs', founded: 1976 },
 ]
 */
-const log = args => console.log(args)
+
+const log = (message) => console.log(message)
 
 const companies = [
   { name: 'Samsung', marketValue: 50, CEO: 'Kim Hyun Suk', founded: 1938 },
