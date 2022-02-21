@@ -16,6 +16,6 @@ node list x HTML collection
 
 const log = (msg) => console.log(msg)
 
-const element = document.getElementsByTagName('body')
+const element = document.getElementByTagName('body')
 
 log(element)
