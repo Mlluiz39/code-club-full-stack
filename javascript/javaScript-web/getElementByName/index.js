@@ -3,10 +3,10 @@ Selecionando Elementos:
 
 - getElementById() - retorna apenas um elemento pelo id
 - getElementsByTagName() - retorna todos os elementos que possuem o mesmo nome 
-  na tag
+  na tag (HTML collection)
 - getElementsByClassName() - retorna todos os elementos que possuem a 
   mesma classe(HTML collection)
-- getElementsByName() - retorna todos os elementos que possuem o mesmo nome
+- getElementsByName() - retorna todos os elementos que possuem o mesmo nome (nodeList)
 
 - querySelector() - retorna apenas um elemento pelo id (element) (.class, #id)
 - querySelectorAll() - retorna todos os elementos que possuem o mesmo nome (node list)
@@ -16,6 +16,6 @@ node list x HTML collection
 
 const log = (msg) => console.log(msg)
 
-const element = document.getElementsByClassName('paragraph')
+const element = document.getElementsByName('my-input')
 
 log(element)
