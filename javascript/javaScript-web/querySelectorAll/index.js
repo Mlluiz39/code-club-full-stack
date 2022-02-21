@@ -16,6 +16,17 @@ node list x HTML collection
 
 const log = (msg) => console.log(msg)
 
-const element = document.getElementByTagName('body')
+const element0 = document.getElementsByTagName('p')
+// em elementos HTML collection não podemos iterar
+const myElement = myElement.forEach(element => {
+  log(element)
+})
+
+const element = document.querySelectorAll('p')
+
+const myElement0 = element.forEach(element => {
+  log(element)
+})
 
 log(element)
+log(myElement0)
