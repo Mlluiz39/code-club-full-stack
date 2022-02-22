@@ -1,4 +1,4 @@
-# Curso Code Club
+# Curso DevClub
 
 <img src="https://images.memberkit.com.br/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMTRkRGc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ%3D%3D--454dd4c501111f1e499573643342d5b559f25552/Co%CC%81pia%20de%20Co%CC%81pia%20de%20Co%CC%81pia%20de%20Co%CC%81pia%20de%20Co%CC%81pia%20de%20Yellow%2C%20White%20and%20Black%20Edgy%20Maximalism%20Video%20Gaming%20YouTube%20Outro.png?width=600&height=100&auto=format" alt="curso Code Club">
 
