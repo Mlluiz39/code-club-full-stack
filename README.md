@@ -24,7 +24,7 @@ Antes de começar, temos que saber que não tem nenhum pré requisitos de progra
 * Paciência para saber que leva um tempo para absorver o conteúdo.
 * Resiliência
 
-## 😄 Seja um dos Alunos<br>
+## 😄 Quer ser um dos sócios do club?<br>
 
 Quer fazer parte desse curso? Clique [AQUI](https://rodolfomori.com.br/codeclub/) e veja como participar.
 
