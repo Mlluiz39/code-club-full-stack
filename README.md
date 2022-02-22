@@ -12,7 +12,7 @@ O curso ainda está em desenvolvimento e as próximas atualizações serão volt
 - [x] Módulo de HTML
 - [x] Módulo de CSS3
 - [x] Módulo Git e Github
-- [ ] Módulo JavaScript
+- [x] Módulo JavaScript
 - [ ] Conseguindo primeiro emprego
 - [ ] Módulo React
 - [ ] Módulo Node JS
