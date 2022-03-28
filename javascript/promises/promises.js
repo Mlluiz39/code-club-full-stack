@@ -66,6 +66,6 @@ holdOnTree('Conexão com DB', rand(1, 3))
   .then(() => {
     console.log('Fim da conexão com DB')
   })
-  .catch(err => {
-    console.log(err)
+  .catch((err) => {
+    console.log('Deu ruim: ', err)
   })
