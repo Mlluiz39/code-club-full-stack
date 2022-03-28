@@ -39,6 +39,8 @@ holdOnT('callback 1', rand(1, 3), () => {
 // Trabalhando com PROMISES
 const holdOnTree = (msg, time) => {
   return new Promise((resolve, reject) => {
+    if (typeof msg !== 'string') reject(new Error('msg precisa ser uma string'))
+
     setTimeout(() => {
       resolve(msg)
     }, time)
@@ -46,11 +48,24 @@ const holdOnTree = (msg, time) => {
 }
 
 holdOnTree('Conexão com DB', rand(1, 3))
-.then((msg) => {console.log(msg) 
-  return holdOnTree('Buscando dados na base', rand(1, 4))})
-  .then((msg) => {console.log(msg)
-    return holdOnTree('Tratando os dados da base', rand(1, 5))})
-    .then((msg) => {console.log(msg)  
-      return holdOnTree('Retornando os dados da base !', rand(1, 6))})
-      .then((msg) => {console.log(msg)})
-        .then(() => {console.log('Fim da conexão com DB')})
+  .then(msg => {
+    console.log(msg)
+    return holdOnTree('Buscando dados na base', rand(1, 4))
+  })
+  .then(msg => {
+    console.log(msg)
+    return holdOnTree('Tratando os dados da base', rand(1, 5))
+  })
+  .then(msg => {
+    console.log(msg)
+    return holdOnTree(333, rand(1, 6))
+  })
+  .then(msg => {
+    console.log(msg)
+  })
+  .then(() => {
+    console.log('Fim da conexão com DB')
+  })
+  .catch(err => {
+    console.log(err)
+  })
