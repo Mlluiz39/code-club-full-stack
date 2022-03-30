@@ -11,9 +11,9 @@ O curso ainda está em desenvolvimento e as próximas atualizações serão volt
 - [x] Módulo de CSS3
 - [x] Módulo Git e Github
 - [x] Módulo JavaScript
-- [ ] Conseguindo primeiro emprego
+- [x] Conseguindo primeiro emprego
 - [ ] Módulo React
-- [ ] Módulo Node JS
+- [x] Módulo Node JS
 - [ ] Módulo SQL / NOSQL
 - [ ] Consumo e criação de API
 
