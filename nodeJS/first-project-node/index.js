@@ -1,5 +1,7 @@
 const express = require('express')
-const uuid = require('uuid')
+const { randomUUID } = require('crypto')
+const fs = require('fs')
+const res = require('express/lib/response')
 
 const port = 3000
 const app = express()
@@ -16,7 +18,39 @@ app.use(express.json())
 - DELETE: Deletar uma informação no back-end
 */
 
-const users = []
+let users = []
+
+const usersFile = data => {
+  fs.writeFile('users.json', JSON.stringify(users), err => {
+    if (err) {
+      return console.log(err)
+    } else {
+      console.log(data)
+    }
+  })
+}
+
+fs.readFile('users.json', (error, data) => {
+  if (error) {
+    console.log(error)
+  } else {
+    users = JSON.parse(data)
+  }
+})
+
+app.post('/users', (req, res) => {
+  const { name, email } = req.body
+  let user = {
+    id: randomUUID(),
+    name,
+    email,
+  }
+  users.push(user)
+
+  usersFile('Usuário cadastrado com sucesso')
+
+  return res.status(201).json('Usuário criado com sucesso!')
+})
 
 app.get('/users', (req, res) => {
   return res.json(users)
@@ -25,31 +59,57 @@ app.get('/users', (req, res) => {
 app.get('/users/:id', (req, res) => {
   //const identificador = req.params.id
   const { id } = req.params
-  return res.json({ id })
-})
+  const user = users.find(user => user.id === id)
 
-app.post('/users', (req, res) => {
-  const { name, email } = req.body
-  let user = {
-    id: users.length + 1,
-    name,
-    email,
-  }
-  users.push(user)
-
-  return res.status(201).send(user)
-})
-
-app.put('/users/:id', (req, res) => {
-  const { id } = req.params
-  const { name, email } = req.body
-  const user = users.find(user => user.id === Number(id))
-  if (!user) {
-    return res.status(400).send({ error: 'User not found' })
-  }
-  user.name = name
-  user.email = email
   return res.json(user)
 })
 
-app.listen(port, () => console.log(`🚀 Servidor rodando na porta: ${port}!`))
+app.put('/users/:id', (req, res) => {
+  // - PUT faz alteração completa
+  const { id } = req.params // pega o id para alterar
+  const { name, email } = req.body // pega os dados enviados no corpo
+  const index = users.findIndex(user => user.id === id) // busca o index do usuário que tem o id passado
+  users[index] = {
+    ...users[index],
+    name,
+    email,
+  }
+  usersFile('Usuário atualizado com sucesso')
+
+  return res.json('Usuário atualizado com sucesso!')
+})
+
+app.patch('/users/:id', (req, res) => {
+  // - PATCH faz alteração parcial
+  const { id } = req.params
+  const { name, email } = req.body
+
+  const user = users.find(user => user.id === id)
+
+  if (!user) {
+    res.status(400).json({ error: 'User not found!' })
+  }
+  user.name = name
+  user.email = email
+
+  return res.json('Usuário atualizado com sucesso!')
+})
+
+app.delete('/users/:id', (req, res) => {
+  const { id } = req.params
+
+  const index = users.findIndex(user => user.id === id)
+
+  if (index < 0) {
+    return res.status(400).json({ error: 'Usuário não encontrado!' })
+  }
+  users.splice(index, 1)
+
+  usersFile('Usuário deletado com sucesso')
+
+  return res.json({ message: 'Usuário deletado com sucesso!' })
+})
+
+app.listen(port, () =>
+  console.log(`🚀 Server started in http://localhost:${port}`)
+)
