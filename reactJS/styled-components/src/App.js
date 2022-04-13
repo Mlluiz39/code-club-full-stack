@@ -1,13 +1,13 @@
-import { Container, H1, P } from './styles'
+import * as S from './styles'
 
 const App = () => {
   const hello = 'Hello React'
   const paragraph = 'Vamos de react'
   return (
-    <Container>
-      <H1>{hello}</H1>
-      <P>{paragraph}</P>
-    </Container>
+    <S.Container>
+      <S.H1>{hello}</S.H1>
+      <S.P>{paragraph}</S.P>
+    </S.Container>
   )
 }
 
