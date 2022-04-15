@@ -27,3 +27,9 @@ const person = {
 }
 
 this.persons = person
+
+function myFunction() {
+  this.console.log('Agora sou global')
+}
+
+myFunction()
