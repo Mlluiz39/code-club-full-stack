@@ -1,9 +1,23 @@
 const button = document.querySelector('button')
 const select = document.querySelector('#currency-select')
 
-const valueDolar = 5.06
-const euro = 5.73
-const bitcoin = 191058.28
+let valueDolar = 0
+let euro = 0
+let bitcoin = 0
+
+const api = async () => {
+  apiUrl = 'https://economia.awesomeapi.com.br/last/USD-BRL,EUR-BRL,BTC-BRL'
+
+  const data = await fetch(apiUrl).then(response => response.json())
+
+  valueDolar = data.USDBRL.high
+  euro = data.EURBRL.high
+  bitcoin = data.BTCBRL.high
+
+  console.log(data)
+}
+
+api()
 
 const realRS = new Intl.NumberFormat('pt-BR', {
   style: 'currency',
@@ -37,7 +51,7 @@ const converterValues = () => {
     ? (currencyValue.innerHTML = euroEUR.format(inputReal / euro))
     : ''
 
-    select.value === '₿ Bitcoin'
+  select.value === '₿ Bitcoin'
     ? (currencyValue.innerHTML = bitcoinXBT.format(inputReal / bitcoin))
     : ''
 }
@@ -53,13 +67,13 @@ const changeCurrency = () => {
     currencyName.innerHTML = 'Bitcoin'
   }
 
-    if(select.value === '€ Euro') {
-      currencyImg.src = 'assets/euro.svg'
-    } else if (select.value === 'Dólar americano') {
-       currencyImg.src = './assets/estados-unidos (1) 1.svg'
-    } else if (select.value === '₿ Bitcoin') {
-      currencyImg.src = './assets/bitCoin.svg'
-    }
+  if (select.value === '€ Euro') {
+    currencyImg.src = 'assets/euro.svg'
+  } else if (select.value === 'Dólar americano') {
+    currencyImg.src = './assets/estados-unidos (1) 1.svg'
+  } else if (select.value === '₿ Bitcoin') {
+    currencyImg.src = './assets/bitCoin.svg'
+  }
   converterValues()
 }
 
