@@ -1,0 +1,28 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid #9758A6;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background-color: #cdd728;
+  border: 5px solid #9758A6;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
