@@ -28,8 +28,11 @@ class Person1 {
   constructor(name, age) {
     console.log(`Hello, I'm ${name}`)
 
-    this.name = name
+    this.name = name  
     this.age = age
+    /* this é utilizado para expor a variável para o escopo global da 
+       função construtora
+    */
   }
   talk() {
     console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old`)
