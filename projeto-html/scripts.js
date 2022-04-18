@@ -54,6 +54,8 @@ const converterValues = () => {
   select.value === '₿ Bitcoin'
     ? (currencyValue.innerHTML = bitcoinXBT.format(inputReal / bitcoin))
     : ''
+
+  inputReal = document.querySelector('#input-real').value = ''
 }
 
 const changeCurrency = () => {
