@@ -1,0 +1,41 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 700px;
+  margin: 10px;
+  border: 1px solid #9758a6;
+}
+
+.block {
+  background-color: #d49c7bb6;
+  border: 5px solid #64a0e4;
+  border-radius: 5px;
+  color: #4d2a2a;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  /* 
+  flex-basis: 300px;
+  flex-grow: 1;
+  flex-shrink: 1; 
+  */
+  flex: 300px 1 1 ;
+}
+
+.block01 {
+  flex: 100px 4 4;
+}
+
+/*
+O flex é um atalho para as tres propriedades basis grow e shrink
+*/
