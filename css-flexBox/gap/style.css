@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 700px;
+  margin: 10px;
+  gap: 50px;
+  border: 1px solid #9758a6;
+}
+
+.block {
+  width: 100px;
+  height: 100px;
+  background-color: #d49c7bb6;
+  border: 5px solid #64a0e4;
+  border-radius: 5px;
+  color: #4d2a2a;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+}
