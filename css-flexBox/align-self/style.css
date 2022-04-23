@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 700px;
+  margin: 10px;
+  border: 1px solid #9758a6;
+  align-items: center;
+}
+
+.block {
+  background-color: #d49c7bb6;
+  border: 5px solid #64a0e4;
+  border-radius: 5px;
+  color: #4d2a2a;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;
+  height: 100px;
+  flex-grow: 1;
+}
+
+.block03 {
+  align-self: flex-end;
+}
+
+.block01 {
+  align-self: flex-start;
+}
+
+.block05 {
+  align-self: flex-start;
+}
