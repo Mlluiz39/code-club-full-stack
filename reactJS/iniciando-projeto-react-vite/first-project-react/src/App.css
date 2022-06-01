@@ -6,23 +6,26 @@
 }
 
 body {
-  background-color: #b35757;
-}
-
-div {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
+
+  width: 950px;
+  height: 950px;
 }
 
 h1 {
   font-size: 36px;
   margin-top: 30px;
   color: #ffffff;
-}
-
-p {
-  color: aliceblue;
 }
