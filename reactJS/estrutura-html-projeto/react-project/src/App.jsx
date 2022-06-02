@@ -4,17 +4,17 @@ function App() {
   return (
     <S.Container>
       <S.Image />
-      <S.ContainerItens>
-        <S.H1>Ola!</S.H1>
+      <S.ContainerItems>
+        <S.H1>Olá!</S.H1>
 
-        <S.InputLabel>Nome:</S.InputLabel>
+        <S.InputLabel>Nome</S.InputLabel>
         <S.Input placeholder="Nome" />
 
-        <S.InputLabel>Email:</S.InputLabel>
-        <S.Input placeholder="Email" />
+        <S.InputLabel>Idade</S.InputLabel>
+        <S.Input placeholder="Idade" />
 
         <S.Button>Cadastrar</S.Button>
-      </S.ContainerItens>
+      </S.ContainerItems>
     </S.Container>
   )
 }
