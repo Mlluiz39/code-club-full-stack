@@ -36,7 +36,6 @@ export const ContainerItems = styled.section`
 `
 
 export const H1 = styled.h1`
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 34px;
@@ -50,7 +49,6 @@ export const H1 = styled.h1`
 `
 
 export const InputLabel = styled.p`
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -75,7 +73,6 @@ export const Input = styled.input`
   padding-left: 25px;
   margin-bottom: 50px;
 
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -96,7 +93,6 @@ export const Button = styled.button`
   border: none;
   border-radius: 14px;
 
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 700;
   font-size: 17px;
@@ -133,13 +129,20 @@ export const User = styled.div`
   padding-left: 25px;
   margin-top: 20px;
 
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
 
   color: #fff;
+
+  p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+  }
 
   button {
     background: none;
@@ -148,19 +151,17 @@ export const User = styled.div`
   }
 `
 
-export const UserName = styled.p`
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: -0.408px;
-`
+// export const UserName = styled.p`
+//   font-style: normal;
+//   font-weight: 700;
+//   font-size: 18px;
+//   line-height: 22px;
+//   letter-spacing: -0.408px;
+// `
 
-export const UserEmail = styled.p`
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-`
+// export const UserEmail = styled.p`
+//   font-style: normal;
+//   font-weight: 400;
+//   font-size: 18px;
+//   line-height: 22px;
+// `
