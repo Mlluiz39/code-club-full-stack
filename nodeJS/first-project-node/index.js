@@ -2,10 +2,13 @@ const express = require('express')
 const { randomUUID } = require('crypto')
 const fs = require('fs')
 const res = require('express/lib/response')
+const cors = require('cors')  
 
-const port = 3000
+const port = 3001
 const app = express()
 app.use(express.json())
+
+app.use(cors())
 
 /*
 - Query params => ?nome=valor&idade=valor  => req.query (objeto) Filtros de busca

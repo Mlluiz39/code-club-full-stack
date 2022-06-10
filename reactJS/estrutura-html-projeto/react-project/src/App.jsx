@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react'
+import axios from 'axios'
 
 import * as S from './styles'
 
@@ -14,16 +15,21 @@ export default () => {
   const inputName = useRef()
   const inputEmail = useRef()
 
-  const addNewUser = () => {
+  const addNewUser =  async () => {
+    const data = await axios.post('http://localhost:3001/users', {
+      name: inputName.current.value,
+      email: inputEmail.current.value,
+    })
+    console.log(data)
     // setUsers([...users, { id: Math.random(), name, email }])
-    setUsers([
-      ...users,
-      {
-        id: Math.random(),
-        name: inputName.current.value,
-        email: inputEmail.current.value,
-      },
-    ])
+    // setUsers([
+    //   ...users,
+    //   {
+    //     id: Math.random(),
+    //     name: inputName.current.value,
+    //     email: inputEmail.current.value,
+    //   },
+    // ])
   }
 
   // const changeInputUser = event => {
