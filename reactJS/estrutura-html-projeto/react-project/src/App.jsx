@@ -6,7 +6,7 @@ import Peoples from './assets/peoples.svg'
 import Arrow from './assets/arrow.svg'
 import Trash from './assets/trash.svg'
 
-export default function App() {
+export default () => {
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT
   const [users, setUsers] = useState([])
   // const [name, setName] = useState('')
@@ -34,6 +34,10 @@ export default function App() {
   //   setEmail(event.target.value)
   // }
 
+  const deleteUser = id => {
+    setUsers(users.filter(user => user.id !== id))
+  }
+
   return (
     <S.Container>
       <S.Image src={Peoples} alt="logo imagem" />
@@ -58,7 +62,7 @@ export default function App() {
               <S.User>
                 <p>{user.name} </p>
                 <p>{user.email}</p>
-                <button>
+                <button onClick={() => deleteUser(user.id)}>
                   <img src={Trash} alt="image de lixeira" />
                 </button>
               </S.User>
