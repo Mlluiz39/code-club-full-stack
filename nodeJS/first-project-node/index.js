@@ -79,7 +79,7 @@ app.put('/users/:id', (req, res) => {
   }
   usersFile('Usuário atualizado com sucesso')
 
-  return res.json('Usuário atualizado com sucesso!')
+  return res.json(users)
 })
 
 app.patch('/users/:id', (req, res) => {
@@ -90,7 +90,7 @@ app.patch('/users/:id', (req, res) => {
   const user = users.find(user => user.id === id)
 
   if (!user) {
-    res.status(400).json({ error: 'User not found!' })
+    res.status(404).json({ error: 'User not found!' })
   }
   user.name = name
   user.email = email
@@ -104,13 +104,13 @@ app.delete('/users/:id', (req, res) => {
   const index = users.findIndex(user => user.id === id)
 
   if (index < 0) {
-    return res.status(400).json({ error: 'Usuário não encontrado!' })
+    return res.status(404).json({ error: 'Usuário não encontrado!' })
   }
   users.splice(index, 1)
 
-  usersFile('Usuário deletado com sucesso')
+  usersFile('Usuário excluído com sucesso')
 
-  return res.json({ message: 'Usuário deletado com sucesso!' })
+  return res.status(204).json()
 })
 
 app.listen(port, () =>
