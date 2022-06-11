@@ -34,7 +34,6 @@ function App() {
   // }
 
   useEffect(() => {
-
     async function loadUsers() {
       const { data: showUsers } = await axios.get('http://localhost:3001/users')
 
@@ -44,8 +43,9 @@ function App() {
     loadUsers()
   }, [])
 
-  const deleteUser = id => {
-    setUsers(users.filter(user => user.id !== id))
+  const deleteUser = async userId => {
+    await axios.delete(`http://localhost:3001/users/${userId}`)
+    setUsers(users.filter(user => user.id !== userId))
   }
 
   return (
