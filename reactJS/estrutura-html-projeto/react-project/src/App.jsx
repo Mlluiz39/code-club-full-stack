@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 
 import * as S from './styles'
@@ -16,18 +16,13 @@ function App() {
   const inputEmail = useRef()
 
   async function addNewUser() {
-    // const { data: newUser } = await axios.post('http://localhost:3001/users', {
-    //   name: inputName.current.value,
-    //   email: inputEmail.current.value,
-    // })
-
-    // setUsers([...users, newUser])
-    // inputName.current.value = ''
-    // inputEmail.current.value = ''
-
-    const { data: showUsers } = await axios.get('http://localhost:3001/users')
-
-    setUsers(showUsers)
+    const { data: newUser } = await axios.post('http://localhost:3001/users', {
+      name: inputName.current.value,
+      email: inputEmail.current.value,
+    })
+    setUsers([...users, newUser])
+    inputName.current.value = ''
+    inputEmail.current.value = ''
   }
 
   // const changeInputUser = event => {
@@ -37,6 +32,17 @@ function App() {
   // const changeInputEmail = event => {
   //   setEmail(event.target.value)
   // }
+
+  useEffect(() => {
+
+    async function loadUsers() {
+      const { data: showUsers } = await axios.get('http://localhost:3001/users')
+
+      setUsers(showUsers)
+    }
+
+    loadUsers()
+  }, [])
 
   const deleteUser = id => {
     setUsers(users.filter(user => user.id !== id))
