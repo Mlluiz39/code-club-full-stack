@@ -1,11 +1,11 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import axios from 'axios'
 
 import * as S from './styles'
 
-import Peoples from './assets/peoples.svg'
-import Arrow from './assets/arrow.svg'
-import Trash from './assets/trash.svg'
+import Peoples from '../../assets/peoples.svg'
+import Arrow from '../../assets/arrow.svg'
+// import Trash from '../../assets/trash.svg'
 
 function App() {
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT
@@ -33,20 +33,20 @@ function App() {
   //   setEmail(event.target.value)
   // }
 
-  useEffect(() => {
-    async function loadUsers() {
-      const { data: showUsers } = await axios.get('http://localhost:3001/users')
+  // useEffect(() => {
+  //   async function loadUsers() {
+  //     const { data: showUsers } = await axios.get('http://localhost:3001/users')
 
-      setUsers(showUsers)
-    }
+  //     setUsers(showUsers)
+  //   }
 
-    loadUsers()
-  }, [])
+  //   loadUsers()
+  // }, [])
 
-  const deleteUser = async userId => {
-    await axios.delete(`http://localhost:3001/users/${userId}`)
-    setUsers(users.filter(user => user.id !== userId))
-  }
+  // const deleteUser = async userId => {
+  //   await axios.delete(`http://localhost:3001/users/${userId}`)
+  //   setUsers(users.filter(user => user.id !== userId))
+  // }
 
   return (
     <S.Container>
@@ -66,7 +66,7 @@ function App() {
           Cadastrar
           <img src={Arrow} alt="imagem de seta" />
         </S.Button>
-        <ul>
+        {/* <ul>
           {users.map(user => (
             <S.User key={user.id}>
               <p>{user.name}</p>
@@ -76,7 +76,7 @@ function App() {
               </button>
             </S.User>
           ))}
-        </ul>
+        </ul> */}
       </S.ContainerItems>
     </S.Container>
   )

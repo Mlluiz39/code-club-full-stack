@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Background from './assets/bg-image-1.svg'
+import Background from '../../assets/bg-image-2.svg'
 
 export const Container = styled.main`
   background: url(${Background});
@@ -28,6 +28,7 @@ export const ContainerItems = styled.section`
     rgba(255, 255, 255, 0.6) 0.85%,
     rgba(255, 255, 255, 0.15) 100%
   );
+  backdrop-filter: blur(45px);
   border-radius: 61px 61px 0px 0px;
   padding: 50px 36px;
 
@@ -48,49 +49,18 @@ export const H1 = styled.h1`
   margin-bottom: 80px;
 `
 
-export const InputLabel = styled.p`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
-  letter-spacing: -0.408px;
-
-  margin-left: 25px;
-
-  color: #fff;
-`
-
-export const Input = styled.input`
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-  border: none;
-  outline: none;
-
-  width: 342px;
-  height: 58px;
-
-  padding-left: 25px;
-  margin-bottom: 50px;
-
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-
-  color: #fff;
-`
-
 export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
+
+  margin-top: 120px;
   width: 342px;
   height: 74px;
 
-  background: rgba(0, 0, 0, 0.8);
-  border: none;
+  background: transparent;
+  border: 1px solid #ffffff;
   border-radius: 14px;
 
   font-style: normal;
@@ -101,6 +71,10 @@ export const Button = styled.button`
   cursor: pointer;
 
   color: #ffffff;
+
+  img {
+    transform: scaleX(-1);
+  }
 
   &:hover {
     opacity: 0.8;
