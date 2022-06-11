@@ -4,7 +4,7 @@
   "description": "primeiro projeto node",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon"
+    "dev": "nodemon"
   },
   "author": "Marcelo Luiz",
   "license": "ISC",

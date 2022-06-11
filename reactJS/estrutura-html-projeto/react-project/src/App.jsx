@@ -7,7 +7,7 @@ import Peoples from './assets/peoples.svg'
 import Arrow from './assets/arrow.svg'
 import Trash from './assets/trash.svg'
 
-export default () => {
+function App() {
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT
   const [users, setUsers] = useState([])
   // const [name, setName] = useState('')
@@ -15,21 +15,19 @@ export default () => {
   const inputName = useRef()
   const inputEmail = useRef()
 
-  const addNewUser =  async () => {
-    const data = await axios.post('http://localhost:3001/users', {
-      name: inputName.current.value,
-      email: inputEmail.current.value,
-    })
-    console.log(data)
-    // setUsers([...users, { id: Math.random(), name, email }])
-    // setUsers([
-    //   ...users,
-    //   {
-    //     id: Math.random(),
-    //     name: inputName.current.value,
-    //     email: inputEmail.current.value,
-    //   },
-    // ])
+  async function addNewUser() {
+    // const { data: newUser } = await axios.post('http://localhost:3001/users', {
+    //   name: inputName.current.value,
+    //   email: inputEmail.current.value,
+    // })
+
+    // setUsers([...users, newUser])
+    // inputName.current.value = ''
+    // inputEmail.current.value = ''
+
+    const { data: showUsers } = await axios.get('http://localhost:3001/users')
+
+    setUsers(showUsers)
   }
 
   // const changeInputUser = event => {
@@ -64,18 +62,18 @@ export default () => {
         </S.Button>
         <ul>
           {users.map(user => (
-            <li key={user.id}>
-              <S.User>
-                <p>{user.name} </p>
-                <p>{user.email}</p>
-                <button onClick={() => deleteUser(user.id)}>
-                  <img src={Trash} alt="image de lixeira" />
-                </button>
-              </S.User>
-            </li>
+            <S.User key={user.id}>
+              <p>{user.name}</p>
+              <p>{user.email}</p>
+              <button onClick={() => deleteUser(user.id)}>
+                <img src={Trash} alt="image de lixeira" />
+              </button>
+            </S.User>
           ))}
         </ul>
       </S.ContainerItems>
     </S.Container>
   )
 }
+
+export default App

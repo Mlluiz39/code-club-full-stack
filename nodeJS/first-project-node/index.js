@@ -52,7 +52,7 @@ app.post('/users', (req, res) => {
 
   usersFile('Usuário cadastrado com sucesso')
 
-  return res.status(201).json('Usuário criado com sucesso!')
+  return res.status(201).json(user)
 })
 
 app.get('/users', (req, res) => {
