@@ -1,4 +1,6 @@
 import { useState, useRef } from 'react'
+import { useHistory } from 'react-router-dom'
+
 import axios from 'axios'
 
 import * as S from './styles'
@@ -10,7 +12,7 @@ import Arrow from '../../assets/arrow.svg'
 function App() {
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT
   const [users, setUsers] = useState([])
-  const [errors, setErrors] = useState([])
+  const history = useHistory()
   // const [name, setName] = useState('')
   // const [email, setEmail] = useState('')
   const inputName = useRef()
@@ -24,7 +26,10 @@ function App() {
     setUsers([...users, newUser])
     inputName.current.value = ''
     inputEmail.current.value = ''
+    
+    history.push('/usuarios')
   }
+
 
   // const changeInputUser = event => {
   //   setName(event.target.value)
@@ -63,7 +68,7 @@ function App() {
         {/* <S.Input onChange={changeInputEmail} placeholder="E-mail" /> */}
         <S.Input ref={inputEmail} placeholder="E-mail" />
 
-        <S.Button to="/usuarios" onClick={addNewUser}>
+        <S.Button onClick={addNewUser}>
           Cadastrar
           <img src={Arrow} alt="imagem de seta" />
         </S.Button>

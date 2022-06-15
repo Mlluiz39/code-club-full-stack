@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Background from '../../assets/bg-image-1.svg'
-import { Link } from 'react-router-dom'
 
 export const Container = styled.main`
   background: url(${Background});
@@ -82,7 +81,7 @@ export const Input = styled.input`
   color: #fff;
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

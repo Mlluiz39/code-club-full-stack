@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Background from '../../assets/bg-image-2.svg'
-import { Link } from 'react-router-dom'
 
 export const Container = styled.main`
   background: url(${Background});
@@ -13,7 +12,8 @@ export const Container = styled.main`
 
   gap: 40px;
 
-  height: 100vh;
+  height: 100%;
+ 
 `
 
 export const Image = styled.img`
@@ -22,6 +22,7 @@ export const Image = styled.img`
 
 export const ContainerItems = styled.section`
   height: 100%;
+  min-height: calc(100vh - 170px);
 
   background: linear-gradient(
     157.44deg,
@@ -50,7 +51,7 @@ export const H1 = styled.h1`
   margin-bottom: 80px;
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;

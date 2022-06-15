@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
+
 import axios from 'axios'
 
 import * as S from './styles'
@@ -9,6 +11,7 @@ import Trash from '../../assets/trash.svg'
 
 function Users() {
   const [users, setUsers] = useState([])
+  const history = useHistory()
 
   useEffect(() => {
     async function loadUsers() {
@@ -23,6 +26,14 @@ function Users() {
   const deleteUser = async userId => {
     await axios.delete(`http://localhost:3001/users/${userId}`)
     setUsers(users.filter(user => user.id !== userId))
+  }
+
+  // function goBackPage() {
+  //   history.goBack()
+  // }
+
+  function goBackPage() {
+    history.push('/')
   }
 
   return (
@@ -43,7 +54,8 @@ function Users() {
           ))}
         </ul>
 
-        <S.Button to="/">
+        {/* <S.Button onClick={goBackPage}> */}
+        <S.Button onClick={goBackPage}>
           <img src={Arrow} alt="imagem de seta" />
           Voltar
         </S.Button>
