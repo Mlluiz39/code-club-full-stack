@@ -48,39 +48,6 @@ export const H1 = styled.h1`
   margin-bottom: 80px;
 `
 
-export const User = styled.li`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 14px;
-
-  margin-top: 20px;
-
-  width: 342px;
-  height: 58px;
-
-  border: none;
-  outline: none;
-
-  p {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
-
-    color: #fff;
-  }
-  button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-  }
-`
-
 export const InputLabel = styled.p`
   font-style: normal;
   font-weight: 700;
@@ -145,5 +112,55 @@ export const Button = styled.button`
 
   &:active {
     opacity: 0.5;
+  }
+`
+
+export const User = styled.li`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  border-radius: 14px;
+  border: none;
+  outline: none;
+
+  width: 342px;
+  height: 58px;
+
+  padding: 40px;
+  margin-top: 20px;
+
+  color: #fff;
+
+  section {
+    display: flex;
+    gap: 10px;
+  }
+
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ebebeb;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: 70px;
+
+    cursor: pointer;
   }
 `

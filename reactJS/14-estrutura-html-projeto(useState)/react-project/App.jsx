@@ -9,19 +9,13 @@ import Trash from './src/assets/trash.svg'
 function App() {
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT
   const [users, setUsers] = useState([])
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
+
+  console.log(users)
 
   async function addNewUser() {
-    setUsers()
-  }
-
-  function changeInputName(event) {
-    setName(event.target.value)
-  }
-
-  function changeInputEmail(event) {
-    setEmail(event.target.value)
+    setUsers([
+      { id: Math.random(), name: 'Marcelo Luiz', email: 'mlluiz@gmail.com' },
+    ])
   }
 
   return (
@@ -31,10 +25,10 @@ function App() {
         <S.H1>Olá!</S.H1>
 
         <S.InputLabel>Nome:</S.InputLabel>
-        <S.Input onChange={changeInputName} placeholder="Nome" />
+        <S.Input placeholder="Nome" />
 
         <S.InputLabel>E-mail:</S.InputLabel>
-        <S.Input onChange={changeInputEmail} placeholder="E-mail" />
+        <S.Input placeholder="E-mail" />
 
         <S.Button onClick={addNewUser}>
           Cadastrar
@@ -43,10 +37,22 @@ function App() {
 
         <ul>
           {users.map(user => (
-            <li>
-              {user.name}
-              {user.email}
-            </li>
+            <S.User key={user.id}>
+              <div>
+                <section>
+                  <span>Nome:</span>
+                  <p>{user.name}</p>
+                </section>
+                <section>
+                  <span>Email:</span>
+                  <p>{user.email}</p>
+                </section>
+              </div>
+
+              <button>
+                <img src={Trash} alt="imagem de lixeira" />
+              </button>
+            </S.User>
           ))}
         </ul>
       </S.ContainerItems>
