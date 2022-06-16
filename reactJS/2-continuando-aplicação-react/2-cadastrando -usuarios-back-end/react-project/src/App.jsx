@@ -15,25 +15,15 @@ function App() {
   const inputEmail = useRef()
 
   async function addNewUser() {
-    /*
-    aqui salva na variável local
-     setUsers([
-       ...users,
-       {
-         id: Math.random(),
-        name: inputName.current.value,
-         email: inputEmail.current.value,
-      },
-   ]) */
-
-    const data = await axios.post('http://localhost:3001/users', {
-      id: Math.random(),
+    const { data: newUser } = await axios.post('http://localhost:3001/users', {
       name: inputName.current.value,
       email: inputEmail.current.value,
     })
-    console.log(data)
-  }
 
+    setUsers([...users, newUser])
+
+    console.log(newUser)
+  }
 
   function deleteUser(userId) {
     setUsers(users.filter(user => user.id !== userId))
