@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import Background from '../../assets/bg-image-1.svg'
-import { Link } from 'react-router-dom'
+import Background from './src/assets/bg-image-1.svg'
 
 export const Container = styled.main`
   background: url(${Background});
@@ -82,7 +81,7 @@ export const Input = styled.input`
   color: #fff;
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +89,7 @@ export const Button = styled(Link)`
 
   width: 342px;
   height: 74px;
-  margin-top: 125px;
+  margin-top: 12px;
 
   background: rgba(0, 0, 0, 0.8);
   border: none;
@@ -116,42 +115,52 @@ export const Button = styled(Link)`
   }
 `
 
-// export const User = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-around;
+export const User = styled.li`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-//   background: rgba(255, 255, 255, 0.25);
-//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-//   border-radius: 14px;
-//   border: none;
-//   outline: none;
+  border-radius: 14px;
+  border: none;
+  outline: none;
 
-//   width: 342px;
-//   height: 58px;
+  width: 342px;
+  height: 58px;
 
-//   padding-left: 25px;
-//   margin-top: 20px;
+  padding: 40px;
+  margin-top: 20px;
 
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 20px;
-//   line-height: 28px;
+  color: #fff;
 
-//   color: #fff;
+  section {
+    display: flex;
+    gap: 10px;
+  }
 
-//   p {
-//     font-style: normal;
-//     font-weight: 700;
-//     font-size: 18px;
-//     line-height: 22px;
-//     letter-spacing: -0.408px;
-//   }
+  p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+  }
 
-//   button {
-//     background: none;
-//     border: none;
-//     cursor: pointer;
-//   }
-// `
+  span {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    color: #ebebeb;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+    outline: none;
+    margin-left: 70px;
+
+    cursor: pointer;
+  }
+`
