@@ -35,7 +35,13 @@ function App() {
         })
       )
     } else {
-      setStatus(swal({ title: 'Erro ao cadastrar usuário!', icon: 'error' }))
+      setStatus(
+        swal({
+          title: 'Erro ao cadastrar usuário!',
+          icon: 'error',
+          timer: 2000,
+        })
+      )
     }
   }
 
@@ -62,7 +68,6 @@ function App() {
           title: 'Erro',
           text: 'Nome não informado!',
           icon: 'error',
-          button: 'Ok',
           timer: 2000,
         })
       )
@@ -72,7 +77,6 @@ function App() {
           title: 'Erro',
           text: 'Email não informado!',
           icon: 'error',
-          button: 'Ok',
           timer: 2000,
         })
       )
