@@ -20,9 +20,9 @@ function App() {
       email: inputEmail.current.value,
     })
 
-    setUsers([...users, newUser])
-
     console.log(newUser)
+
+    setUsers([...users, newUser])
   }
 
   function deleteUser(userId) {
