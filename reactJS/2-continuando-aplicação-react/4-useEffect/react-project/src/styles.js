@@ -45,7 +45,7 @@ export const H1 = styled.h1`
 
   color: #ffffff;
 
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 `
 
 export const InputLabel = styled.p`
@@ -117,7 +117,7 @@ export const Button = styled.button`
 
 export const User = styled.li`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   background: rgba(255, 255, 255, 0.25);
@@ -130,15 +130,12 @@ export const User = styled.li`
   width: 342px;
   height: 58px;
 
-  padding: 40px;
+  padding: 50px;
   margin-top: 20px;
 
   color: #fff;
 
-  section {
-    display: flex;
-    gap: 10px;
-  }
+  
 
   p {
     font-style: normal;
@@ -147,19 +144,25 @@ export const User = styled.li`
     line-height: 28px;
   }
 
-  span {
+  label {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-left: -35px;
+    gap: 10px;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
-    line-height: 28px;
+    line-height: 20px;
     color: #ebebeb;
   }
 
   button {
+    display: flex;
     background: transparent;
     border: none;
     outline: none;
-    margin-left: 70px;
+  
 
     cursor: pointer;
   }

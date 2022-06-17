@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import swal from 'sweetalert'
 
 import axios from 'axios'
 
@@ -11,18 +12,34 @@ import Trash from './assets/trash.svg'
 function App() {
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT
   const [users, setUsers] = useState([])
+  const [status, setStatus] = useState({ type: '', message: '' })
   const inputName = useRef()
   const inputEmail = useRef()
 
   async function addNewUser() {
+    if (!validate()) return
+
     const { data: newUser } = await axios.post('http://localhost:3001/users', {
       name: inputName.current.value,
       email: inputEmail.current.value,
     })
-    setUsers([...users, newUser])
-    inputName.current.value = ''
-    inputEmail.current.value = ''
 
+    if (newUser) {
+      setStatus(
+        swal({
+          title: 'Usuário cadastrado com sucesso!',
+          icon: 'success',
+          button: 'Ok',
+          timer: 2000,
+        })
+      )
+
+      setUsers([...users, newUser])
+      inputName.current.value = ''
+      inputEmail.current.value = ''
+    } else {
+      setStatus(swal('Erro', 'Erro ao cadastrar usuário!', 'error'))
+    }
   }
 
   // REACT HOOKS => FERRAMENTAS AUXILIARIES PARA O REACT useEffect (efeito colateral)
@@ -42,6 +59,30 @@ function App() {
 
   function deleteUser(userId) {
     setUsers(users.filter(user => user.id !== userId))
+  }
+
+  function validate() {
+    if (!inputName.current.value)
+      return setStatus(
+        swal({
+          title: 'Erro',
+          text: 'Nome não informado!',
+          icon: 'error',
+          button: 'Ok',
+          timer: 2000,
+        })
+      )
+    if (!inputEmail.current.value)
+      return setStatus(
+        swal({
+          title: 'Erro',
+          text: 'Email não informado!',
+          icon: 'error',
+          button: 'Ok',
+          timer: 2000,
+        })
+      )
+    return true
   }
 
   return (
@@ -65,14 +106,15 @@ function App() {
           {users.map(user => (
             <S.User key={user.id}>
               <div>
-                <section>
-                  <span>Nome:</span>
+                <label>
+                  Nome:
                   <p>{user.name}</p>
-                </section>
-                <section>
-                  <span>Email:</span>
+                </label>
+
+                <label>
+                  Email:
                   <p>{user.email}</p>
-                </section>
+                </label>
               </div>
 
               <button onClick={() => deleteUser(user.id)}>
