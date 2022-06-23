@@ -19,7 +19,7 @@ function App() {
   const inputEmail = useRef()
 
   async function addNewUser() {
-    const { data: newUser } = await axios.post('https://afcdxd.conteige.cloud/users, {
+    const { data: newUser } = await axios.post('https://afcdxd.conteige.cloud, {
       name: inputName.current.value,
       email: inputEmail.current.value,
     })
@@ -41,7 +41,7 @@ function App() {
 
   // useEffect(() => {
   //   async function loadUsers() {
-  //     const { data: showUsers } = await axios.get('https://afcdxd.conteige.cloud/users')
+  //     const { data: showUsers } = await axios.get('https://afcdxd.conteige.cloud')
 
   //     setUsers(showUsers)
   //   }
