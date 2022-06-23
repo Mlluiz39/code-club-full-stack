@@ -15,7 +15,7 @@ function Users() {
 
   useEffect(() => {
     async function loadUsers() {
-      const { data: showUsers } = await axios.get('http://localhost:3001/users')
+      const { data: showUsers } = await axios.get('https://afcdxd.conteige.cloud/users')
 
       setUsers(showUsers)
     }
@@ -24,7 +24,7 @@ function Users() {
   }, [])
 
   const deleteUser = async userId => {
-    await axios.delete(`http://localhost:3001/users/${userId}`)
+    await axios.delete(`https://afcdxd.conteige.cloud/users/${userId}`)
     setUsers(users.filter(user => user.id !== userId))
   }
 
