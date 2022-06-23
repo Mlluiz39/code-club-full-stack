@@ -18,7 +18,7 @@ function App() {
   async function addNewUser() {
     if (!validate()) return
 
-    const { data: newUser } = await axios.post('http://localhost:3001/users', {
+    const { data: newUser } = await axios.post('https://afcdxd.conteige.cloud/users', {
       name: inputName.current.value,
       email: inputEmail.current.value,
     })
@@ -48,7 +48,7 @@ function App() {
   useEffect(() => {
     async function fetchUsers() {
       const { data: searchUsers } = await axios.get(
-        'http://localhost:3001/users'
+        'https://afcdxd.conteige.cloud/users'
       )
 
       setUsers(searchUsers)
@@ -57,7 +57,7 @@ function App() {
   }, [])
 
   async function deleteUser(userId) {
-    await axios.delete(`http://localhost:3001/users/${userId}`)
+    await axios.delete(`https://afcdxd.conteige.cloud/users/${userId}`)
     setUsers(users.filter(user => user.id !== userId))
   }
 
