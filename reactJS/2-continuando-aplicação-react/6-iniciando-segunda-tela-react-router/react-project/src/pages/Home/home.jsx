@@ -1,17 +1,16 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import swal from 'sweetalert'
 
 import axios from 'axios'
 
 import * as S from './styles'
 
-import Peoples from './assets/peoples.svg'
-import Arrow from './assets/arrow.svg'
-import Trash from './assets/trash.svg'
+import Peoples from '@/assets/peoples.svg'
+import Arrow from '@/assets/arrow.svg'
 
-function App() {
+export default function Home() {
   const [users, setUsers] = useState([])
-  const [setStatus] = useState(false)
+  const [status, setStatus] = useState(false)
   const inputName = useRef()
   const inputEmail = useRef()
 
@@ -37,7 +36,7 @@ function App() {
     } else {
       setStatus(
         swal({
-          title: 'Erro ao cadastrar usuário!',
+          title: 'Falha ao cadastrar usuário!',
           icon: 'error',
           timer: 2000,
         })
@@ -45,27 +44,11 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    async function fetchUsers() {
-      const { data: searchUsers } = await axios.get(
-        'http://localhost:3001/users'
-      )
-
-      setUsers(searchUsers)
-    }
-    fetchUsers()
-  }, [])
-
-  async function deleteUser(userId) {
-    await axios.delete(`http://localhost:3001/users/${userId}`)
-    setUsers(users.filter(user => user.id !== userId))
-  }
-
   function validate() {
     if (!inputName.current.value)
       return setStatus(
         swal({
-          title: 'Erro',
+          title: 'Error',
           text: 'Nome não informado!',
           icon: 'error',
           timer: 2000,
@@ -74,7 +57,7 @@ function App() {
     if (!inputEmail.current.value)
       return setStatus(
         swal({
-          title: 'Erro',
+          title: 'Error',
           text: 'Email não informado!',
           icon: 'error',
           timer: 2000,
@@ -85,7 +68,7 @@ function App() {
 
   return (
     <S.Container>
-      <S.Image src={Peoples} alt="logo imagem" />
+      <S.Image src={Peoples} alt="logo images" />
       <S.ContainerItems>
         <S.H1>Olá!</S.H1>
 
@@ -97,33 +80,9 @@ function App() {
 
         <S.Button onClick={addNewUser}>
           Cadastrar
-          <img src={Arrow} alt="imagem de seta" />
+          <img src={Arrow} alt="images de seta" />
         </S.Button>
-
-        <ul>
-          {users.map(user => (
-            <S.User key={user.id}>
-              <div>
-                <label>
-                  Nome:
-                  <p>{user.name}</p>
-                </label>
-
-                <label>
-                  Email:
-                  <p>{user.email}</p>
-                </label>
-              </div>
-
-              <button onClick={() => deleteUser(user.id)}>
-                <img src={Trash} alt="imagem de lixeira" />
-              </button>
-            </S.User>
-          ))}
-        </ul>
       </S.ContainerItems>
     </S.Container>
   )
 }
-
-export default App
