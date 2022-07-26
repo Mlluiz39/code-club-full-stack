@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Users from '@/pages/Users/users'
-
 import GlobalStyle from '@/styles/globalStyle'
+
+import Routes from '@/routes'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Users />
+   <Routes />
     <GlobalStyle />
   </React.StrictMode>
 )
