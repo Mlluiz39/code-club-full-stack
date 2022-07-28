@@ -20,6 +20,11 @@ export default function Users() {
     loadUsers()
   }, [])
 
+  async function deleteUser(userId) {
+    await axios.delete(`http://localhost:3001/users/${userId}`)
+    setUsers(users.filter(user => user.id !== userId))
+  }
+
   function goBackPage() {
     history.push('/')
   }
@@ -42,7 +47,11 @@ export default function Users() {
               <S.TData>{user.name}</S.TData>
               <S.TData>
                 {user.email}
-                <S.Image alt="seta" src={Trash} />
+                <S.Image
+                  onClick={() => deleteUser(user.id)}
+                  alt="seta"
+                  src={Trash}
+                />
               </S.TData>
             </S.TRow>
           </S.TableBody>
